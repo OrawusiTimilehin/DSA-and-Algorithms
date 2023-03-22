@@ -30,7 +30,14 @@ class LinkedList:
         current.next = None             # If the next node does not point to any other node it means it is the last node in sequence
                                         # Therefore we set the next of current node to None, which basically cuts the link.
         
-    def insert(self, ):
+    def insert(self, index):
+        counter = 0
+        current = self.head
+        while current:
+            if counter < index:
+                current = current.next
+                
+
         
         
 
