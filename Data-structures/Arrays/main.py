@@ -21,26 +21,37 @@ class Array:
 
     # Removes an element from the end of the Array
     def pop(self,):
-        if self.length > 0 :
-            value = self.data[self.length]  # Holds the  element  to be removed
-            del self.data[self.length]      # Removes the value from the end of the Array 
+        if self.length > 0 :        #Checks if the array is empty or not 
+            value = self.data[self.length -1]  # Holds the  element  to be removed
+            del self.data[self.length -1]      # Removes the value from the end of the Array 
+            self.length -= 1                    # Reduces the length of the array
         return value                        # Returns the element which was removed
                                             # O(1) - Operation
 
 
     # Inserts a value at a specific index
-    def insert(self, value, index):
-        for i in range(self.length, index, -1):        # Loops backwards from the end of the list to theindex specified
-            self.data[i] = self.data[i - 1]            # Shifts every element one place to the right.
-        self.data[index] = value                       # Replaces the value at that given index with the value specified.
-        return self.data                               # O(n) Operation
+
+    def insert(self, item, index):
+        for i in range(self.length, index, -1):     # Loops backwards from the end of the list to theindex specified
+            self.data[i] = self.data[i-1]              # Shifts every element one place to the right.
+        self.data[index] = item                         # Replaces the value at that given index with the value specified.
+        return self.data                                # O(n) Operation
+
+    # def insert(self, value, index):
+    #     for i in range(self.length, index, -1):        # Loops backwards from the end of the list to theindex specified
+    #         self.data[i] = self.data[i - 1]            # Shifts every element one place to the right.
+    #     self.data[index] = value                       # Replaces the value at that given index with the value specified.
+    #     return self.data                               # O(n) Operation
     
     # Removes a value at a specified index
     def delete(self, index):
-        for i in range(index, self.length):
-            self.data[i] = self.data[i + 1]            # Shifts every element to the left by replacing each element with the one after it.
-        del self.data[self.length]                     # Deletes the last element at the last index which we do not need anymore.
-        return self.data                               # O(n) Operation            
+        if index >= self.length:            # Checks if the index specified is above the array
+            return f"Index is outsied of range"
+        else:
+            for i in range(index, self.length):
+                self.data[i] = self.data[i + 1]            # Shifts every element to the left by replacing each element with the one after it.
+            del self.data[self.length]                     # Deletes the last element at the last index which we do not need anymore.
+            return self.data                               # O(n) Operation            
 
 test = Array()
 
@@ -51,11 +62,21 @@ test = Array()
 # test.get(1)
 # test.pop()
 # print(test.insert(3, 2))
+# print(test.__str__())
 # print(test.delete(4))
 
 
-print(test.__dict__)
+# print(test.__str__())
 
     
+
+
+
+
+
+
+
+
+
 
 
