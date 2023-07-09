@@ -1,4 +1,12 @@
-#Implementing an array
+###Implementing an array
+
+##Time Complextiy of operations
+
+# Lookup/Access - O(1)
+# Append - O(1)
+# Insert - O(n)
+# Search - O(n)
+#
 
 class Array:
     def __init__(self,):
