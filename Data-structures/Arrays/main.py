@@ -3,7 +3,9 @@
 ##Time Complextiy of operations
 
 # Lookup/Access - O(1)
-# Append - O(1)
+# Append - O(1) - Although can sometimes be O(n) in the case of dynamic arrays you can add as much values as you want but from the low level point of view the computer allocates a block of adjacent memory addresses for your array 
+# and although we can keep on adding under the hood when that block of memory get full the computer has to find another free space usually doubles the size, copies the array now and where the array and puts it there where you can keep on adding until its full again and the process continues.
+#  That's why sometimes it can be O(n). 
 # Insert - O(n)
 # Search - O(n)
 #
@@ -40,7 +42,7 @@ class Array:
     # Inserts a value at a specific index
 
     def insert(self, item, index):
-        for i in range(self.length, index, -1):     # Loops backwards from the end of the list to theindex specified
+        for i in range(self.length, index, -1):     # Loops backwards from the end of the list to the index specified
             self.data[i] = self.data[i-1]              # Shifts every element one place to the right.
         self.data[index] = item                         # Replaces the value at that given index with the value specified.
         return self.data                                # O(n) Operation

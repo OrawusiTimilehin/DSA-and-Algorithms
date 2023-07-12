@@ -90,9 +90,8 @@ class LinkedList():
             print( "The position is out of range", end='\n\n\n')
         elif position == 0 :                            # If the position that the node is to be inserted in is 0 which is the head position then the head becomes the previous head's next. Also the size is incremented by 1
             self.head = self.head.next
-            if self.head.next == None or self.head == None:           # Checks for the case where there are two nodes in the list or one node in the list in each case the tail woudl be the same as the head. Which is either none or the only node in the list.
+            if  self.head == None:           # Checks for the case where there are two nodes in the list or one node in the list in each case the tail woudl be the same as the head. Which is either none or the only node in the list.
                 self.tail = self.head    
-                self.tail = self.head
             self.size -= 1
         else:
             current = self.head
@@ -134,57 +133,56 @@ class LinkedList():
 
 
         
+if __name__ == "__main__":              #This file is going to be imported into other files so inorder for it not to run these commands this is used
+    my_linked_list = LinkedList()
+    print(my_linked_list.display_list(), end='\n\n\n')
+
+    #Output - Empty
+
+    my_linked_list.append(5)
+    my_linked_list.append(3)
+    my_linked_list.append(10)
+    print(my_linked_list.display_list(), end='\n\n\n')
+    #Output - 5 3 10
+
+    my_linked_list.prepend(4)
+    print(my_linked_list.display_list(), end='\n\n\n')
+    #Output - 4 5 3 10
 
 
-my_linked_list = LinkedList()
-print(my_linked_list.display_list(), end='\n\n\n')
+    my_linked_list.insert(2,7)
+    print(my_linked_list.display_list(), end='\n\n\n')
+    #Output - 4 5 7 3 10
 
-#Output - Empty
+    my_linked_list.insert(0,0)
+    my_linked_list.insert(6,0)
+    my_linked_list.insert(9,3)
+    print(my_linked_list.display_list(), end='\n\n\n')
 
-my_linked_list.append(5)
-my_linked_list.append(3)
-my_linked_list.append(10)
-print(my_linked_list.display_list(), end='\n\n\n')
-#Output - 5 3 10
+    #Output - 0 4 5 7 3 10 0
 
-my_linked_list.prepend(4)
-print(my_linked_list.display_list(), end='\n\n\n')
-#Output - 4 5 3 10
+    my_linked_list.delete_by_value(3)
+    print(my_linked_list.display_list(), end='\n\n\n')
+    #Output - 0 4 5 7 10 0
 
-
-my_linked_list.insert(2,7)
-print(my_linked_list.display_list(), end='\n\n\n')
-#Output - 4 5 7 3 10
-
-my_linked_list.insert(0,0)
-my_linked_list.insert(6,0)
-my_linked_list.insert(9,3)
-print(my_linked_list.display_list(), end='\n\n\n')
-
-#Output - 0 4 5 7 3 10 0
-
-my_linked_list.delete_by_value(3)
-print(my_linked_list.display_list(), end='\n\n\n')
-#Output - 0 4 5 7 10 0
-
-my_linked_list.delete_by_value(0)
-print(my_linked_list.display_list(), end='\n\n\n')
-#Output -  4 5 7 10 0
+    my_linked_list.delete_by_value(0)
+    print(my_linked_list.display_list(), end='\n\n\n')
+    #Output -  4 5 7 10 0
 
 
-my_linked_list.delete_by_position(3)
-print(my_linked_list.display_list(), end='\n\n\n')
-#Output -  4 5 7 0
+    my_linked_list.delete_by_position(3)
+    print(my_linked_list.display_list(), end='\n\n\n')
+    #Output -  4 5 7 0
 
 
-my_linked_list.delete_by_position(0)
-print(my_linked_list.display_list(), end='\n\n\n')
-#Output -  5 7 0
+    my_linked_list.delete_by_position(0)
+    print(my_linked_list.display_list(), end='\n\n\n')
+    #Output -  5 7 0
 
 
-my_linked_list.delete_by_position(8)
-#Output -  Out of Range 
+    my_linked_list.delete_by_position(8)
+    #Output -  Out of Range 
 
 
-print(my_linked_list.size, end='\n\n\n')
-#Output - 3
+    print(my_linked_list.size, end='\n\n\n')
+    #Output - 3
