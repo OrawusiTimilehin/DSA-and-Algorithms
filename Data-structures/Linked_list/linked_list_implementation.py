@@ -44,16 +44,16 @@ class LinkedList():
             self.size += 1
 
 
-    def display_list(self, ) -> list:                   #This method displays the list and all its data. It traverses through the list and appends all the data to a list which is returned byt hte function
+    def display_list(self, ):
         if self.size == 0:
-            return "The list is empty"
+            print("List is empty\n\n\n") 
         else:
             current = self.head
-            linked_list = []
-            while current:                                              #Loops through the list and if the current node is not None then it appends the data of the node to the list.
-                linked_list.append((current.data, current.next))
+            while current != None:
+                print(f"{current.data, current.next}\n")
                 current = current.next
-            return linked_list
+        print( f"The values of the linked list have been printed\n\n\n")
+        return 
 
 
 
@@ -90,7 +90,7 @@ class LinkedList():
             print( "The position is out of range", end='\n\n\n')
         elif position == 0 :                            # If the position that the node is to be inserted in is 0 which is the head position then the head becomes the previous head's next. Also the size is incremented by 1
             self.head = self.head.next
-            if  self.head == None:           # Checks for the case where there are two nodes in the list or one node in the list in each case the tail woudl be the same as the head. Which is either none or the only node in the list.
+            if  self.head == None:           # Checks for the case where there is one node in the list in this case the tail would be the same as the head which is None.
                 self.tail = self.head    
             self.size -= 1
         else:
