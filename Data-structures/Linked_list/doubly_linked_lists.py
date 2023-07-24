@@ -145,13 +145,12 @@ class DoublyLinkedList():
                         current.next.previous = current.previous
                     self.size -= 1
                     return f"This value has been deleted : {value}" 
-            print("Given value not found.\n\n\n")               #This only gegts triggered if it goes through the while loop and the value is not found. If it is found the return keyword would have been triggered and the function would have been exited.
+            print("Given value not found.\n\n\n")               #This only gets triggered if it goes through the while loop and the value is not found. If it is found the return keyword would have been triggered and the function would have been exited.
 
         
             
             
-        
-            
+
             
 my_linked_list = DoublyLinkedList()
 my_linked_list.print_list()
